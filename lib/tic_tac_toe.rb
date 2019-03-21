@@ -60,3 +60,15 @@ def won?(board)
       position_taken?(board, combo[0])
   end
 end
+
+def full?(board)
+  board.all? { |token| token == 'X' || token == 'O' }
+end
+
+def draw?(board)
+  !won?(board) && full?(board)
+end
+
+def over?(board)
+  won?(board) || draw?(board)
+end
